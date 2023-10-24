@@ -1,0 +1,30 @@
+<a class="btn btn-primary" [routerLink]="['form']">Nuevo</a>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">unidad</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos | paginate: { itemsPerPage: 4, currentPage:pageActual }" >
+      <th scope="row">{{ producto.productId }}</th>
+      <td>{{ producto.description}}</td>
+      <td>{{ producto.price}}</td>
+      <td>{{ producto.quantity}}</td>
+      <td>{{ producto.category.description}}</td>
+      <td>{{ producto.unit.description}}</td>
+      <td>
+        <a class="btn btn-success btn-sm btn-custom" routerLink="form/{{producto.productId}}">Editar</a>
+        <a class="btn btn-danger btn-sm" (click)="eliminar(producto.productId)">Eliminar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+<router-outlet></router-outlet>

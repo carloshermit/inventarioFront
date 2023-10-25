@@ -7,7 +7,7 @@ import { Categoria } from 'src/app/interface/categoria';
 })
 export class CategoriaService {
 
-  rutaApi="http://mi-api-inventario-env.eba-nbtmd8uk.us-east-2.elasticbeanstalk.com/api/categorias";
+  rutaApi="https://inventario.carlosflores.tech/api/categorias";
   private http= inject(HttpClient);
 
   constructor(){

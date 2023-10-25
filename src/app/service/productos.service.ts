@@ -7,7 +7,7 @@ import { Producto } from 'src/app/interface/producto';
 })
 export class ProductosService {
 
-  rutaApi="http://mi-api-inventario-env.eba-nbtmd8uk.us-east-2.elasticbeanstalk.com/api/products";
+  rutaApi="https://inventario.carlosflores.tech/api/products";
   private http= inject(HttpClient);
 
   constructor(){

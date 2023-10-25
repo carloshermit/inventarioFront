@@ -7,7 +7,7 @@ import { Unidad } from 'src/app/interface/unidad';
 })
 export class UnidadService {
 
-  rutaApi="http://mi-api-inventario-env.eba-nbtmd8uk.us-east-2.elasticbeanstalk.com/api/unidades";
+  rutaApi="https://inventario.carlosflores.tech/api/unidades";
   private http= inject(HttpClient);
 
   constructor(){
